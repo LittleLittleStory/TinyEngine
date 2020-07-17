@@ -1,8 +1,21 @@
 #pragma once
 #include "TinyWin.h"
+#include "TinyException.h"
 
 class Window
 {
+public:
+	class Exception : public TinyException
+	{
+	public:
+		Exception(int line, const char* file, HRESULT hr) noexcept;
+		const char* what() const noexcept override;
+		const char* GetType() const noexcept override;
+		HRESULT GetErrorCode() const noexcept;
+		std::string GetErrorDescription() const noexcept;
+	private:
+		HRESULT hr;
+	};
 private:
 	class WindowClass
 	{

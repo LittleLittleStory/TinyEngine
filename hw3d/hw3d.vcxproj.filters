@@ -24,6 +24,9 @@
     <ClCompile Include="Window.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TinyException.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowsMessageMap.h">
@@ -33,6 +36,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="TinyWin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyException.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
