@@ -59,11 +59,11 @@
     <Filter Include="头文件">
       <UniqueIdentifier>{d94055f7-ebce-4323-a613-6b13e6d3644c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{d77e253e-4b6b-4fd2-95b3-986db82cfe52}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件">
       <UniqueIdentifier>{75cb6d58-a624-4c2b-ae58-381ef179da2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="引用资源">
+      <UniqueIdentifier>{d77e253e-4b6b-4fd2-95b3-986db82cfe52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Icon.ico">
-      <Filter>资源文件</Filter>
+      <Filter>引用资源</Filter>
     </Image>
   </ItemGroup>
 </Project>
