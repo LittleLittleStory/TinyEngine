@@ -69,7 +69,7 @@ void Keyboard::DisableAutorepeat()noexcept
 	autorepeatEnable = false;
 }
 
-bool Keyboard::AutorepeatIsEnable()const noexcept
+bool Keyboard::AutorepeatIsEnabled()const noexcept
 {
 	return	autorepeatEnable;
 }

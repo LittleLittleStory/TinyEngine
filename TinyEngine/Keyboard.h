@@ -43,20 +43,20 @@ public:
 	Keyboard() = default;
 	Keyboard(const Keyboard&) = delete;
 	Keyboard& operator=(const Keyboard&) = delete;
-	//key event stuff
+	//Key event stuff
 	bool KeyIsPressed(unsigned char keycode)const noexcept;
 	Event ReadKey()noexcept;
 	bool KeyIsEmpty()const noexcept;
 	void FlushKey()noexcept;
-	//char event stuff
+	//Char event stuff
 	char ReadChar()noexcept;
 	bool CharIsEmpty()const noexcept;
 	void FlushChar()noexcept;
 	void Flush() noexcept;
-	//autorepeat control
+	//Autorepeat control
 	void EnableAutorepeat()noexcept;
 	void DisableAutorepeat()noexcept;
-	bool AutorepeatIsEnable() const noexcept;
+	bool AutorepeatIsEnabled() const noexcept;
 private:
 	void OnKeyPressed(unsigned char keycode)noexcept;
 	void OnKeyReleased(unsigned char keycode)noexcept;
