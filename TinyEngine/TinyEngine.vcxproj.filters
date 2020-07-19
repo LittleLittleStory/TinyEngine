@@ -25,6 +25,12 @@
     <ClCompile Include="TinyTimer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dxerr.cpp">
+      <Filter>Dxerr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TinyException.h">
@@ -54,6 +60,12 @@
     <ClInclude Include="TinyTimer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>Dxerr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="头文件">
@@ -65,13 +77,29 @@
     <Filter Include="引用资源">
       <UniqueIdentifier>{d77e253e-4b6b-4fd2-95b3-986db82cfe52}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="TinyEngine.rc" />
+    <Filter Include="Dxerr">
+      <UniqueIdentifier>{9c20c3dd-b023-4888-aef9-55f3ab050dfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Icon.ico">
       <Filter>引用资源</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXGetErrorDescription.inl">
+      <Filter>Dxerr</Filter>
+    </None>
+    <None Include="DXGetErrorString.inl">
+      <Filter>Dxerr</Filter>
+    </None>
+    <None Include="DXTrace.inl">
+      <Filter>Dxerr</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TinyEngine.rc">
+      <Filter>引用资源</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
