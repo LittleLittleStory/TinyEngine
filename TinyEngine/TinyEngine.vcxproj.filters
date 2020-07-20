@@ -86,6 +86,9 @@
     <Filter Include="Dxerr">
       <UniqueIdentifier>{9c20c3dd-b023-4888-aef9-55f3ab050dfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{f0e59424-2034-477f-a585-252392d69e2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Icon.ico">
@@ -107,5 +110,13 @@
     <ResourceCompile Include="TinyEngine.rc">
       <Filter>引用资源</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
