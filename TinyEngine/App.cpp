@@ -11,8 +11,10 @@
 #include "GDIPlusManager.h"
 #include "Sheet.h"
 #include "SkinnedBox.h"
+#include "imgui/imgui.h"
 
 GDIPlusManager gdipm;
+namespace dx = DirectX;
 
 App::App() :
 	window(800, 600, "TinyEngine")
@@ -74,18 +76,32 @@ App::App() :
 	drawables.reserve(nDrawables);
 	std::generate_n(std::back_inserter(drawables), nDrawables, Factory{ window.Gfx() });
 
-	window.Gfx().SetProjection(DirectX::XMMatrixPerspectiveLH(1.0f, 3.0f / 4.0f, 0.5f, 40.0f));
+	window.Gfx().SetProjection(dx::XMMatrixPerspectiveLH(1.0f, 3.0f / 4.0f, 0.5f, 40.0f));
 }
 
 void App::DoFrame()
 {
-	const auto dt = timer.Mark();
-	window.Gfx().ClearBuffer(0.07f, 0.0f, 0.12f);
+	const auto dt = timer.Mark() * speed_factor;
+	window.Gfx().BeginFrame(0.07f, 0.0f, 0.12f);
+	window.Gfx().SetCamera(cam.GetMatrix());
+
 	for (auto& d : drawables)
 	{
 		d->Update(window.keyboard.KeyIsPressed(VK_SPACE) ? 0.0f : dt);
 		d->Draw(window.Gfx());
 	}
+
+	// imgui window to control simulation speed
+	if (ImGui::Begin("Simulation Speed"))
+	{
+		ImGui::SliderFloat("Speed Factor", &speed_factor, 0.0f, 4.0f);
+		ImGui::Text("%.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		ImGui::Text("Status: %s", window.keyboard.KeyIsPressed(VK_SPACE) ? "PAUSED" : "RUNNING (hold spacebar to pause)");
+	}
+	ImGui::End();
+
+	cam.SpawnControlWindow();
+
 	window.Gfx().EndFrame();
 }
 
